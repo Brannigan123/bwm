@@ -27,7 +27,11 @@ pub fn get_keybindings() -> HashMap<
         "M-semicolon" => run_external!(LAUNCHER);
         "M-Return" => run_external!(TERMINAL);
 
-        // Brigtness Controll
+        // Screenshot Functionality
+        "Print" => run_external!(SCREEN_CAPTURE);
+        "S-Print" => run_external!(DESKTOP_CAPTURE);
+
+        // Brigtness Control
         "XF86MonBrightnessUp" => run_external!(BRIGHTNESS_UP);
         "XF86MonBrightnessDown" => run_external!(BRIGHTNESS_UP);
 
