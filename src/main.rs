@@ -26,7 +26,7 @@ pub fn main() -> PenroseResult<()> {
     let config = penrose_config::config::get_config().unwrap_or_default();
     let mut wm = new_x11rb_rust_backed_window_manager(config, vec![], logging_error_handler())?;
 
-    set_wm_name(&wm, "blessedwm");
+    set_wm_name(&wm, "blessed-wm");
 
     wm.grab_keys_and_run(
         bindings::keybindings::get_keybindings(),
@@ -69,7 +69,7 @@ fn get_wm_id() -> Result<String, Error> {
 fn update_wm_name(id: &str, name: &str) {
     Command::new("xprop")
         .stdout(Stdio::piped())
-        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
         .arg("-f")
         .arg("MY_VAR1")
         .arg("8s")
